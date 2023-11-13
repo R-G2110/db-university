@@ -27,7 +27,7 @@ Soluzione:
 
 SELECT * 
 FROM `students`
-WHERE YEAR(`date_of_birth`) < '1993'
+WHERE `date_of_birth` < '1992-11-14'
 
 ========================================================================================================
 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
@@ -101,6 +101,11 @@ GROUP BY `office_number`
 3. Calcolare la media dei voti di ogni appello d'esame
 
 Soluzione:
+
+SELECT `exam_id` AS `Appello_esame`, AVG(`vote`) AS `Media_voti`
+FROM `exam_student`
+GROUP BY `Appello_esame`
+
 =======================================================================================================
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
 
