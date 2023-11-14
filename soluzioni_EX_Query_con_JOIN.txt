@@ -47,6 +47,13 @@ AND `teachers`.`surname` = 'Amato';
 
 Soluzione:
 
+SELECT DISTINCT `students`.`surname` AS `student_surname`, `students`.`name` AS `student_name`, `degrees`.`name` AS `degree_name`, `departments`.`name` AS `department_name`
+FROM `students`
+INNER JOIN `degrees`
+ON `degrees`.`id` = `students`.`degree_id`
+INNER JOIN `departments`
+ON `departments`.`id` = `degrees`.`department_id`
+ORDER BY `student_surname`, `student_name`
 
 ========================================================================================================
 5. Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
